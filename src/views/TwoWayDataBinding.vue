@@ -1,13 +1,15 @@
 <template>
     <div class="twdb">
         <h1>Two Way Data Binding</h1>
+        <!-- Software Architectural pattern -->
+        <p>Model View View Model made simple</p>
         <input type="text" v-model="name">
         <p>{{ name }}</p>
     </div>
 </template>
 
 <script>
-// View is bind to the model, model is bind to the view
+// NOTE: View is bind to the model, model is bind to the view
 export default {
     name: 'TwoWayDataBinding',
     data() {

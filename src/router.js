@@ -8,6 +8,7 @@ import Fetch from './views/Fetch.vue';
 Vue.use(Router);
 
 export default new Router({
+    // History mode
     // @ref https://router.vuejs.org/en/essentials/history-mode.html
     mode: 'history',
     routes: [

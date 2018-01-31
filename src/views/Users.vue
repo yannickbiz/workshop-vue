@@ -12,8 +12,9 @@
 </template>
 
 <script>
+// @ is a shortcut for src
+import Card from '@/components/Card';
 import { users } from '../jsonplaceholder';
-import Card from '../components/Card';
 
 export default {
     name: 'Users',
@@ -22,7 +23,9 @@ export default {
     },
     data() {
         return {
-            users: users,
+            // NOTE: `users: users`
+            // is the equivalent
+            users,
         };
     },
 };

@@ -4,46 +4,69 @@
 
 ## Getting Started
 
-1. Installer le projet vue via vue-cli
-
-    > TODO: Expliquer le rôle de webpack derière tout sa, les loaders
-
-2. Configurer son editeur
-
-    > TODO: Vetur
-
-3. Équiper son browser pour debugger
-
-    > TODO: Live exemples lors du workshop (inspect les props, etc...)
-
-4. Créer une view qui render une liste d'utilisateur(routing, vue constructor)
-
-    > TODO: Faire des référence à la doc: v-for v-if :key
-    > TODO: Expliquer les features ES6/ES7 utilisé: deconstruct, template string, import export, class
-    > TODO: Intro à css grid pour la liste, faire référence au cours gratuid de wes bos + [css-trick guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
-
-5. Créer notre première composante pour faire l'affichage d'un utilisateur
-
-    > TODO: Ref à la doc
-
-6. Les props
-
-    > TODO: Ref à la doc
-
-7. Two way data binding
-
-    > TODO: Ref à la doc
-
-8. Fetch du data d'un api, async await, arrow functions, error handling, loading
-
-## Tools
-
-[vetur](https://github.com/vuejs/vetur)
+### Vue cli
 
 [vue-cli](https://github.com/vuejs/vue-cli)
 
-[vue-devtools](https://github.com/vuejs/vue-devtools)
+> The purpose of official Vue project templates is providing opinionated, battery-included development tooling setups so that users can get started with actual app code as fast as possible
+
+#### Under the hood
 
 [vue-loader](https://vue-loader.vuejs.org/en/configurations/pre-processors.html)
+
+`webpack` is a module bundler. It takes a bunch of files, treating each as a module, figuring out the dependencies between them, and bundle them into static assets that are ready for deployment.
+
+`vue-loader` is a loader for webpack that can transform Vue components written in the following format into a plain JavaScript module:
+
+Cool features with `vue-loader`:
+
+* ES2015 enabled by default
+* Allows using other webpack loaders for each part of a Vue component, for example SASS for `<style>` and Jade for `<template>`;
+* Supports component hot-reloading during development
+
+### Vetur for Vscode
+
+[vetur](https://github.com/vuejs/vetur)
+
+Features:
+
+* Syntax-highlighting
+* Snippet
+* Emmet
+* Linting / Error Checking
+* Formatting
+* Auto Completion
+* Debugging
+
+### Browser extension for easier debugging
+
+[vue-devtools](https://github.com/vuejs/vue-devtools)
+
+### MVVM
+
+Voir l'exemple de _Two Way Data Binding_
+
+## TODO
+
+1. Créer un listing d'utilisateur
+
+* Créer la view
+* _Loop_ au travers de la liste d'utilisateur
+* Créer un component pour afficher chacun des utilisateur
+
+> THÉORIES: Containers vs Components, Routing, Conditional rendering, ES6: Object deconstructing, Template string, Import/Export, CSS GRID?
+
+2. Récupérer la liste des utilisateurs via un api
+
+* Fetch le data
+* Error, loading
+
+> THÉORIES: Component lifecycle, ES6: Arrow function, Async/Await, Fetch API
+
+3. Nested routes
+
+> THÉORIES: Routing
+
+## API
 
 [jsonplaceholder](https://jsonplaceholder.typicode.com/)

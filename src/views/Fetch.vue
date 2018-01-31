@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Fetch (Advanced)</h1>
+        <h1>Fetching Data</h1>
         <div v-if="loading">
             Loading...
         </div>
@@ -18,12 +18,17 @@
 </template>
 
 <script>
-import Card from '../components/Card';
+// Data fetching
+// @ref: https://router.vuejs.org/en/advanced/data-fetching.html
+import Card from '@/components/Card';
 export default {
     name: 'Fetch',
     components: {
         Card,
     },
+    // NOTE: When we use an arrow function,
+    // the this is lexical, meaning that it does not create its own this context.
+    // Instead, this has the original meaning from the enclosing context.
     data: () => ({
         loading: false,
         error: null,
@@ -36,12 +41,13 @@ export default {
         async fetchData() {
             try {
                 this.loading = true;
+                // Fetch API
+                // @ref https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
                 const response = await fetch('https://jsonplaceholder.typicode.com/users');
                 const users = await response.json();
                 this.loading = false;
                 this.users = users;
             } catch (error) {
-                console.log('here');
                 this.error = error.toString();
             }
         },
