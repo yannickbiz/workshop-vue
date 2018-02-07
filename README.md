@@ -48,20 +48,12 @@ Voir l'exemple de _Two Way Data Binding_
 
 ## TODO
 
-1. Créer un listing d'utilisateur
+* Créer la view `users`
+* `fetch` la liste d'utilisateur
+* Créer la liste avec `v-for`
+* Créer le component `Card` pour afficher chacun des utilisateurs
 
-* Créer la view
-* _Loop_ au travers de la liste d'utilisateur
-* Créer un component pour afficher chacun des utilisateur
-
-> THÉORIES: Containers vs Components, Routing, Conditional rendering, ES6: Object deconstructing, Template string, Import/Export, CSS GRID?
-
-2. Récupérer la liste des utilisateurs via un api
-
-* Fetch le data
-* Error, loading
-
-> THÉORIES: Component lifecycle, ES6: Arrow function, Async/Await, Fetch API
+> THÉORIES: Component lifecycle, Containers vs Components, Routing, Conditional rendering, ES6: Object deconstructing, Template string, Import/Export, Arrow function, Async/Await, Fetch API, CSS GRID?
 
 3. Nested routes
 

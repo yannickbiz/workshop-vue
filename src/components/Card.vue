@@ -1,35 +1,23 @@
 <template>
-    <div class="card">
-        <h3 class="card__title">{{ user.name }}</h3>
-        <div class="card__body">
-            <small>{{ user.email }}</small>
-        </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{ user.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ user.email }}</h6>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Card',
-    props: ['user']
+  name: 'Card',
+  props: ['user'],
 };
 </script>
 
 <style lang="scss">
-.card {
-    margin-bottom: 16px;
-    padding: 16px;
-    border: 1px solid #ccc;
-    box-shadow: 1px 0 6px rgba(#ccc, 0.3);
-}
+@import '../assets/styles/main.scss';
 
-.card__title {
-    margin-top: 0;
-    margin-bottom: 6px;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.card__body p {
-    margin: 0;
+.card-title {
+  color: $brand-primary;
 }
 </style>
