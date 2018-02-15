@@ -1,14 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import About from './views/About.vue';
+import Sandbox from './views/Sandbox.vue';
 import Users from './views/Users.vue';
-import TwoWayDataBinding from './views/TwoWayDataBinding.vue';
-import Fetch from './views/Fetch.vue';
+import Todos from './views/Todos.vue';
 
 Vue.use(Router);
 
 export default new Router({
-    // History mode
+    // remove the # in url
     // @ref https://router.vuejs.org/en/essentials/history-mode.html
     mode: 'history',
     routes: [
@@ -18,19 +19,24 @@ export default new Router({
             component: Home,
         },
         {
+            path: '/about',
+            name: 'about',
+            component: About,
+        },
+        {
+            path: '/sandbox',
+            name: 'sandbox',
+            component: Sandbox,
+        },
+        {
             path: '/users',
             name: 'users',
             component: Users,
         },
         {
-            path: '/twdb',
-            name: 'two-way-data-binding',
-            component: TwoWayDataBinding,
-        },
-        {
-            path: '/fetch',
-            name: 'fetch',
-            component: Fetch,
+            path: '/todos',
+            name: 'todos',
+            component: Todos,
         },
     ],
 });

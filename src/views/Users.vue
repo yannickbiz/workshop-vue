@@ -1,8 +1,14 @@
 <template>
     <div>
         <h1>Users</h1>
+        <div v-if="loading">
+            Loading...
+        </div>
+        <div v-if="error">
+            {{ error }}
+        </div>
         <div v-if="users.length">
-            <ul class="users">
+            <ul class="users list-reset">
                 <li v-for="user in users" :key="user.id">
                     <Card :user="user"></Card>
                 </li>
@@ -12,21 +18,46 @@
 </template>
 
 <script>
-// @ is a shortcut for src
 import Card from '@/components/Card';
-import { users } from '../jsonplaceholder';
-
 export default {
-    name: 'Users',
     components: {
         Card,
     },
-    data() {
-        return {
-            // NOTE: `users: users`
-            // is the equivalent
-            users,
-        };
+    // NOTE: When we use an arrow function, the `this` is lexical,
+    // meaning that it does not create its own `this` context.
+    // Instead, `this` has the original meaning from the enclosing context.
+    data: () => ({
+        loading: false,
+        error: null,
+        users: [],
+    }),
+    created() {
+        this.fetchData();
+    },
+    methods: {
+        async fetchData() {
+            try {
+                this.loading = true;
+                // Fetch API
+                const response = await fetch(
+                    'https://jsonplaceholder.typicode.com/users'
+                );
+                const users = await response.json();
+                this.loading = false;
+                this.users = users;
+            } catch (error) {
+                this.error = error.toString();
+            }
+        },
     },
 };
 </script>
+
+<style>
+.users {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 20px;
+}
+</style>
+
